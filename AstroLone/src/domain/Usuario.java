@@ -1,4 +1,4 @@
-
+package domain;
 public class Usuario{
 	private String nombreUsuario;
 	private String contrasenya;
