@@ -7,7 +7,10 @@ public class Usuario{
 		nombreUsuario = "";
 		contrasenya="";
 	}
-	
+	public Usuario(String nombre) {
+			this.nombreUsuario = nombre;
+			this.contrasenya="";
+	}
 	
 	public Usuario(String nombre, String password) {
 		this.nombreUsuario=nombre;
@@ -28,15 +31,21 @@ public class Usuario{
 	@Override
 	public boolean equals(Object obj) {
 		if(obj instanceof Usuario) {
-			return false;
+			System.out.println("hola");
+			Usuario nuevo = (Usuario) obj;
+			if(nuevo.nombreUsuario.equals(this.nombreUsuario)) {
+				return true;
+			}
 		}
-		Usuario nuevo = (Usuario) obj;
-		if(nuevo.nombreUsuario == this.nombreUsuario) {
-			return true;
-		}
+		
 		return false;
 	}
 	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return this.nombreUsuario.hashCode();
+	}
 	
 	
 }
